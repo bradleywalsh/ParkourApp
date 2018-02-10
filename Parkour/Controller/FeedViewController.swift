@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Firebase
 
-class MainPageViewController: UIViewController {
+class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +21,6 @@ class MainPageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func logoutPressed(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            
-            navigationController?.popToRootViewController(animated: true)
-        } catch {
-            print("there was a problem signing out")
-        }
     }
     
 }
