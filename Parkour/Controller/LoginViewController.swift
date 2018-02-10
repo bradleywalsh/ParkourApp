@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     
@@ -19,16 +20,40 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
+    
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 
     @IBAction func loginPressed(_ sender: Any) {
         if emailTextField.text != nil && passwordTextField.text != nil {
-            AuthService.instance.loginUser(withEmail: emailTextField.text!, andPassword: passwordTextField.text!, loginComplete: { (success, loginError) in
-                if success {
-                    self.performSegue(withIdentifier: "goToMain", sender: self)
+            SVProgressHUD.show()
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                
+                if error != nil {
+                    SVProgressHUD.dismiss()
+                    if let errCode = AuthErrorCode(rawValue: error!._code) {
+                        switch errCode {
+                        case .invalidEmail:
+                            self.createAlert(title: "Error:", message: "Please enter a valid email address or password")
+                        case .wrongPassword:
+                            self.createAlert(title: "Error:", message: "Please enter a valid email address or password")
+                        default:
+                            break
+                        }
+                    }
                 } else {
-                    print(String(describing: loginError?.localizedDescription))
+                    SVProgressHUD.dismiss()
+                    self.performSegue(withIdentifier: "goToMain", sender: self)
+                    
                 }
-            })
+                
+            }
         }
     }
 }

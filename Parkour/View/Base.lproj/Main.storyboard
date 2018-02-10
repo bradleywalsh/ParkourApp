@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6zt-WC-pPm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6zt-WC-pPm">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,7 +67,6 @@
                             <constraint firstItem="WUq-bM-NcE" firstAttribute="leading" secondItem="Z4H-c5-y7f" secondAttribute="leading" id="yZ6-z7-pAc"/>
                             <constraint firstItem="TSC-5J-9mA" firstAttribute="top" secondItem="WUq-bM-NcE" secondAttribute="bottom" id="yby-K2-Sf8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="CJ1-Q5-iWt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="ZlB-Bt-ezq"/>
                 </viewController>
@@ -126,7 +124,6 @@
                                         </state>
                                         <connections>
                                             <action selector="loginPressed:" destination="Z3h-aB-HIU" eventType="touchUpInside" id="LMR-cX-jsm"/>
-                                            <segue destination="Dpv-GL-JAh" kind="push" identifier="goToMain" id="mub-5B-m0S"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMS-WM-1PM">
@@ -160,13 +157,13 @@
                             <constraint firstAttribute="trailing" secondItem="si4-mm-80H" secondAttribute="trailing" id="qRT-3p-bV3"/>
                             <constraint firstItem="LpA-L1-gSr" firstAttribute="top" secondItem="4f9-Db-ygN" secondAttribute="top" id="y1f-H4-lYW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="cXc-XM-OJg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="7ec-tv-WDs"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="emailTextField" destination="bMS-WM-1PM" id="fID-8Y-nix"/>
                         <outlet property="passwordTextField" destination="PsC-lJ-WDh" id="AT5-Uw-WkK"/>
+                        <segue destination="Dpv-GL-JAh" kind="push" identifier="goToMain" id="eul-uw-886"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftr-8f-wyQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -219,7 +216,6 @@
                                         </state>
                                         <connections>
                                             <action selector="registerPressed:" destination="5yK-Jk-CD2" eventType="touchUpInside" id="Vts-0n-lrD"/>
-                                            <segue destination="Dpv-GL-JAh" kind="push" id="eyS-zY-PmB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -250,12 +246,12 @@
                             <constraint firstItem="dIf-YI-IB1" firstAttribute="top" secondItem="Kgs-cb-ZgU" secondAttribute="bottom" id="w0F-aP-o0f"/>
                             <constraint firstItem="quV-7z-xIf" firstAttribute="top" secondItem="Kgs-cb-ZgU" secondAttribute="bottom" id="ztR-44-kqc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rcg-AZ-cV7"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="Obw-jS-GPi"/>
                     <connections>
                         <outlet property="emailTextField" destination="AHf-TN-K6S" id="uv7-wz-KVd"/>
                         <outlet property="passwordTextField" destination="t25-fl-wpT" id="3Xu-E8-FMS"/>
+                        <segue destination="Dpv-GL-JAh" kind="push" identifier="goToMain" id="wzu-19-Cvk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pj-En-yY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,11 +262,14 @@
         <scene sceneID="iNf-TY-elH">
             <objects>
                 <viewController storyboardIdentifier="MainPageViewController" id="Dpv-GL-JAh" customClass="MainPageViewController" customModule="Parkour" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GR2-n7-Qwf"/>
+                        <viewControllerLayoutGuide type="bottom" id="D1F-W3-db8"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="50I-TS-mea">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="YWs-b1-Rhc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Parkour" id="h6D-wK-nc2">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="Wzl-Y5-E2c">
@@ -291,6 +290,6 @@
         <image name="background2" width="1194" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mub-5B-m0S"/>
+        <segue reference="eul-uw-886"/>
     </inferredMetricsTieBreakers>
 </document>
