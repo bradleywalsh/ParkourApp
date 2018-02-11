@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06010E9420300A020031A835 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06010E9320300A020031A835 /* Message.swift */; };
 		060EBACF202ED8F900983AF4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EBACE202ED8F900983AF4 /* TabBarViewController.swift */; };
+		06445EAF202FD25F003B75CE /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06445EAE202FD25F003B75CE /* UIViewExt.swift */; };
+		06445EB12030078E003B75CE /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06445EB02030078E003B75CE /* FeedCell.swift */; };
 		06476206202E4A8D00842948 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06476205202E4A8D00842948 /* RegisterViewController.swift */; };
 		06611F9B202EE3B800D2C019 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06611F9A202EE3B800D2C019 /* MessagesViewController.swift */; };
 		06611F9D202EE3C400D2C019 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06611F9C202EE3C400D2C019 /* MapViewController.swift */; };
 		06611F9F202EE3D200D2C019 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06611F9E202EE3D200D2C019 /* ProfileViewController.swift */; };
+		068028AA202FCB3200B0359C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068028A9202FCB3200B0359C /* PostViewController.swift */; };
 		068E90F0202BE17100E689C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E90EF202BE17100E689C0 /* AppDelegate.swift */; };
 		068E90F2202BE17100E689C0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068E90F1202BE17100E689C0 /* LoginViewController.swift */; };
 		068E90F5202BE17100E689C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 068E90F3202BE17100E689C0 /* Main.storyboard */; };
@@ -26,11 +30,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06010E9320300A020031A835 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		060EBACE202ED8F900983AF4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		06445EAE202FD25F003B75CE /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		06445EB02030078E003B75CE /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		06476205202E4A8D00842948 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		06611F9A202EE3B800D2C019 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		06611F9C202EE3C400D2C019 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		06611F9E202EE3D200D2C019 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		068028A9202FCB3200B0359C /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		068E90EC202BE17100E689C0 /* Parkour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		068E90EF202BE17100E689C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		068E90F1202BE17100E689C0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06445EAD202FD233003B75CE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				06445EAE202FD25F003B75CE /* UIViewExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		068E90E3202BE17100E689C0 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +97,7 @@
 		068E90EE202BE17100E689C0 /* Parkour */ = {
 			isa = PBXGroup;
 			children = (
+				06445EAD202FD233003B75CE /* Extensions */,
 				06DFC76C202E7AA3003E8D78 /* Services */,
 				06DFC76A202E7802003E8D78 /* Controller */,
 				06DFC769202E77EF003E8D78 /* View */,
@@ -95,6 +112,7 @@
 		06DFC768202E77E8003E8D78 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06010E9320300A020031A835 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,6 +122,7 @@
 			children = (
 				068E90F3202BE17100E689C0 /* Main.storyboard */,
 				068E90F8202BE17100E689C0 /* LaunchScreen.storyboard */,
+				06445EB02030078E003B75CE /* FeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +139,7 @@
 				06611F9A202EE3B800D2C019 /* MessagesViewController.swift */,
 				06611F9C202EE3C400D2C019 /* MapViewController.swift */,
 				06611F9E202EE3D200D2C019 /* ProfileViewController.swift */,
+				068028A9202FCB3200B0359C /* PostViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06445EAF202FD25F003B75CE /* UIViewExt.swift in Sources */,
+				068028AA202FCB3200B0359C /* PostViewController.swift in Sources */,
 				060EBACF202ED8F900983AF4 /* TabBarViewController.swift in Sources */,
 				06BAD603202E467F00DFC9FA /* FeedViewController.swift in Sources */,
 				06476206202E4A8D00842948 /* RegisterViewController.swift in Sources */,
@@ -297,8 +319,10 @@
 				06611F9B202EE3B800D2C019 /* MessagesViewController.swift in Sources */,
 				06BAD600202E3D5100DFC9FA /* WelcomeViewController.swift in Sources */,
 				06611F9F202EE3D200D2C019 /* ProfileViewController.swift in Sources */,
+				06445EB12030078E003B75CE /* FeedCell.swift in Sources */,
 				06DFC76E202E7AB2003E8D78 /* DataServices.swift in Sources */,
 				068E90F2202BE17100E689C0 /* LoginViewController.swift in Sources */,
+				06010E9420300A020031A835 /* Message.swift in Sources */,
 				068E90F0202BE17100E689C0 /* AppDelegate.swift in Sources */,
 				06DFC770202E7F99003E8D78 /* AuthService.swift in Sources */,
 			);

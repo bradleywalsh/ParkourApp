@@ -45,9 +45,9 @@ class LoginViewController: UIViewController {
                     if let errCode = AuthErrorCode(rawValue: error!._code) {
                         switch errCode {
                         case .invalidEmail:
-                            self.createAlert(title: "Error:", message: "Please enter a valid email address or password")
+                            self.createAlert(title: "Error:", message: "Please enter a valid email address and password")
                         case .wrongPassword:
-                            self.createAlert(title: "Error:", message: "Please enter a valid email address or password")
+                            self.createAlert(title: "Error:", message: "Please enter a valid email address and password")
                         default:
                             break
                         }

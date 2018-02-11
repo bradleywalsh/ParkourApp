@@ -19,7 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        
+        // log out an user who was signed in from previous session
+        do {
+            try Auth.auth().signOut()
+            
+        }
+        catch {
+            print("error: there was a problem logging out")
+        }
         return true
     }
 

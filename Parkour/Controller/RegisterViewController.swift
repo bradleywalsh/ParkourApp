@@ -35,7 +35,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerPressed(_ sender: Any) {
         if emailTextField.text != nil && passwordTextField.text != nil {
             SVProgressHUD.show()
-            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            Auth.auth().createUser(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
                 if error != nil {
                     SVProgressHUD.dismiss()
                     if let errCode = AuthErrorCode(rawValue: error!._code) {
@@ -51,10 +51,12 @@ class RegisterViewController: UIViewController {
                         }
                     }
                 } else {
+                    let userData = ["provider": user?.providerID, "email": user?.email]
+                    DataService.instance.createDBUser(uid: (user?.uid)!, userData: userData)
                     SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "goToMain", sender: self)
                 }
-            })
+            }
         }
     }
 }

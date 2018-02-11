@@ -8,17 +8,17 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        // check if user is already logged in from previous session
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "goToMain", sender: self)
+        }
     }
     
     
